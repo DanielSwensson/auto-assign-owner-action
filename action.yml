@@ -1,0 +1,9 @@
+name: 'Auto assign owner'
+description: 'Automatically assigns owner on PR'
+inputs:
+  github-token:
+    description: 'Github secret token'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

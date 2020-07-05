@@ -1,0 +1,23 @@
+{
+	"name": "auto-assign-owner",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "ncc build index.js -m",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"github",
+		"actions"
+	],
+	"author": "daniel@danielswensson.se",
+	"license": "ISC",
+	"dependencies": {
+		"@actions/core": "^1.2.4",
+		"@actions/github": "^4.0.0"
+	},
+	"devDependencies": {
+		"prettier": "2.0.5"
+	}
+}
