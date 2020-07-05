@@ -3,11 +3,11 @@ on: [pull_request]
 jobs:
   example:
     runs-on: ubuntu-latest
-    name: An example of auto-assign-author action
+    name: An example of auto-assign-owner-action
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Auto assign author
-        uses: ./ # Uses an action in the root directory
+      - name: Auto assign owner
+        uses: ./
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
