@@ -8,6 +8,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Auto assign owner
-        uses: danielswensson/auto-assign-owner-action@v1
+        uses: ./
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
