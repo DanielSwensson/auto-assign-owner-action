@@ -9,7 +9,12 @@ const run = async () => {
 		}
 
 		const owner = context.payload.pull_request.user.login;
-		core.info(`user: ${ JSON.stringify(context.payload.pull_request.user, undefined, 2) }`);
+
+		if (owner === 'github-actions[bot]' || owner === 'dependabot[bot]') {
+			core.info(`Can't assign github-action or dependabot`);
+			return;
+		}
+
 		const ownerIsAssigned = context.payload.pull_request.assignees.some(
 			assignee => assignee.login === owner
 		);
