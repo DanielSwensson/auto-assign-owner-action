@@ -9,7 +9,7 @@ const run = async () => {
 		}
 
 		const owner = context.payload.pull_request.user.login;
-		core.info('user', context.payload.pull_request.user);
+		core.info(`user: ${ context.payload.pull_request.user }`);
 		const ownerIsAssigned = context.payload.pull_request.assignees.some(
 			assignee => assignee.login === owner
 		);
