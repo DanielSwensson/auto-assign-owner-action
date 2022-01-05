@@ -16,7 +16,7 @@ const run = async () => {
 		}
 
 		const ownerIsAssigned = context.payload.pull_request.assignees.some(
-			assignee => assignee.login === owner
+			(assignee) => assignee.login === owner
 		);
 
 		if (ownerIsAssigned) {
@@ -25,13 +25,13 @@ const run = async () => {
 		}
 
 		const token = core.getInput('github-token');
-		const octokit = new github.getOctokit(token);
+		const octokit = github.getOctokit(token);
 		const issue_number = context.payload.pull_request.number;
 
-		await octokit.issues.addAssignees({
+		await octokit.rest.issues.addAssignees({
 			...context.repo,
 			issue_number,
-			assignees: [owner]
+			assignees: [owner],
 		});
 	} catch (error) {
 		core.setFailed(error.message);
