@@ -11,7 +11,7 @@ This action adds the owner of pull request as assignee if not already present
 ## Example usage
 
 ```
-uses: danielswensson/auto-assign-owner-action@v1.0.1
+uses: danielswensson/auto-assign-owner-action@v1
 with:
   github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
