@@ -6,7 +6,7 @@ jobs:
     name: An example of auto-assign-owner-action
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Auto assign owner
         uses: ./
         with:
